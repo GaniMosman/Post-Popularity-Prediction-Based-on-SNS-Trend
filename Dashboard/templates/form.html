@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="shortcut icon" href="#" />
+    <meta charset="UTF-8">
+    <title>PPPS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+    <h1 id = "maintitle" >Post popularity prediction system</h1>
+
+
+        <div class = "info">
+
+            <form id = 'form' action="/",  method="post">
+                <label for="username" >Username:</label >
+                <input type="text" onkeyup="validateForm()"  required autocomplete="off"  id="username" placeholder="Type your Twitter username" name="username",  size ="27"><br><br>
+                <label for="tweet" >Tweet:</label>
+                <textarea id="tweet" onkeyup="validateForm()" required rows="2" cols="25"  placeholder="Type your tweet here" name="tweet" ></textarea><br><br>
+                <input  disabled type="submit" value="Predict" id = 'submit'>
+                <button id = 'post' disabled onclick="window.open('https://twitter.com/intent/tweet?text={{text}}') ">Post</button>
+            </form>
+
+        </div>
+
+
+    <script type="text/javascript" src="{{ url_for('static', filename='script.js')}}"></script>
+
+</body>
+
+</html>
